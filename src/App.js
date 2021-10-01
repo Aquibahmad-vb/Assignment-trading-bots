@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Bots from './component/Bots';
+import Header from './component/Header';
+import {Route,Switch} from 'react-router-dom';
+import BotsDetail from './component/BotsDetail';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="canvas">
+    <Header/>
+    <Switch>
+      <Route path="/bots" exact>
+        <Bots/>
+      </Route>
+      <Route path="/bots-detail/:id" exact>
+        <BotsDetail />
+      </Route>
+    </Switch>
     </div>
+    </>
   );
 }
 
