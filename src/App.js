@@ -1,7 +1,7 @@
 import './App.css';
 import Bots from './component/Bots';
 import Header from './component/Header';
-import {Route,Switch} from 'react-router-dom';
+import {Route,Switch,Redirect} from 'react-router-dom';
 import BotsDetail from './component/BotsDetail';
 
 function App() {
@@ -11,6 +11,9 @@ function App() {
     <div className="canvas">
     <Header/>
     <Switch>
+      <Route path="/" exact>
+        <Redirect to="/bots" />
+      </Route>
       <Route path="/bots" exact>
         <Bots/>
       </Route>
