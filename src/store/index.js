@@ -1,5 +1,6 @@
 import { createStore } from "redux";
 
+// initial state for reducer function
 const initstate={
    "bots":[
       {
@@ -27,6 +28,7 @@ const initstate={
    noOfItem:0,  
 }
 
+// reducer function for incrementing no of item in cart
 const botsreducer=(state=initstate,action)=>{
    if(action.type === "addToCart")
    {
@@ -38,5 +40,6 @@ const botsreducer=(state=initstate,action)=>{
    return state;
 }
 
+// creating and exporting store
 const store=createStore(botsreducer);
 export default store;

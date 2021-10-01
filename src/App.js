@@ -11,6 +11,7 @@ function App() {
     <div className="canvas">
     <Header/>
     <Switch>
+      {/* redirecting default route path `/` to `/bots' */}
       <Route path="/" exact>
         <Redirect to="/bots" />
       </Route>

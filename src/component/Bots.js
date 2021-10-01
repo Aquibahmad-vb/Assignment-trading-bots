@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './Bots.css'
-// import BotItem from './BotItem';
 import {useSelector,useDispatch} from 'react-redux';
 
 export const Bots = () => {
     const botdata=useSelector(state => state.bots);
     const dispatch=useDispatch();
-
-    // console.log(botdata)
+    // dispatch action addToCart on pressing buy button
     const cartHandler=()=>{
         dispatch({
             type:"addToCart"

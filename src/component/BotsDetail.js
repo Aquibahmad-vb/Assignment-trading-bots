@@ -4,10 +4,13 @@ import {useSelector,useDispatch} from 'react-redux';
 import './ViewAlgo.css'
 
 const BotsDetail = () => {
+    // getting bot data from store and store in variable named botalgo
     const botalgo=useSelector(state => state.bots);
     const param=useParams();
+    // creating variable for dispatch function
     const dispatch=useDispatch();
 
+    // dispatch action type addToCart
     const carthandler=()=> {
         dispatch({
             type:"addToCart"
@@ -16,6 +19,7 @@ const BotsDetail = () => {
 
     return (
         <div className="botalgodetail">
+        {/* filtering and print detail of a single bot */}
             {botalgo.filter((algo)=>{
                 if(algo.id.toString()===param.id)
                 {
